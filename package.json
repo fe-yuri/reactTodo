@@ -1,12 +1,12 @@
 {
   "name": "react-todo",
-  "author": "gomugom",
-  "description": "React Todo App",
+  "author": "glassyi",
+  "description": "Practice to React Todo App",
   "license": "MIT",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-study/todo-app.git"
+    "url": "git+https://github.com/glassyi/reactTodo.git"
   },
   "scripts": {
     "start": "node ./server.js"
@@ -17,23 +17,29 @@
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-3": "^6.17.0",
+    "css": "^2.2.1",
     "eslint": "^3.13.1",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^6.9.0",
+    "html-webpack-plugin": "^2.26.0",
+    "loader": "^2.1.1",
+    "node-sass": "^4.3.0",
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.12.2"
   },
   "bugs": {
-    "url": "https://github.com/react-study/todo-app/issues"
+    "email": "glassyiweb@gmail.com"
   },
-  "homepage": "https://github.com/react-study/todo-app#readme",
+  "homepage": "https://github.com/glassyi/reactTodo.git#readme",
   "main": ".eslintrc.js",
   "dependencies": {
     "react-dom": "^15.4.2"
