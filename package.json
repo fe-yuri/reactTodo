@@ -1,47 +1,34 @@
 {
-  "name": "react-todo",
-  "author": "glassyi",
-  "description": "Practice to React Todo App",
-  "license": "MIT",
+  "name": "reactTodo",
   "version": "1.0.0",
+  "main": "main.js",
+  "author": "yuri <glassyiweb@gmail.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/glassyi/reactTodo.git"
+    "url": "https://github.com/glassyi/reactTodo.git"
   },
   "scripts": {
     "start": "node ./server.js"
   },
-  "devDependencies": {
-    "babel-core": "^6.21.0",
-    "babel-loader": "^6.2.10",
-    "babel-preset-latest": "^6.16.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-3": "^6.17.0",
-    "css": "^2.2.1",
-    "eslint": "^3.13.1",
-    "eslint-loader": "^1.6.1",
-    "eslint-plugin-react": "^6.9.0",
-    "html-webpack-plugin": "^2.26.0",
-    "loader": "^2.1.1",
-    "node-sass": "^4.3.0",
+  "dependencies": {
+    "babel-cli": "^6.24.0",
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-latest": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "babel-register": "^6.24.0",
+    "react-hot-loader": "^1.3.1",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
-    "sass-loader": "^4.1.1",
-    "style-loader": "^0.13.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2",
-    "webpack-hot-middleware": "^2.12.2"
-  },
-  "bugs": {
-    "email": "glassyiweb@gmail.com"
-  },
-  "homepage": "https://github.com/glassyi/reactTodo.git#readme",
-  "main": ".eslintrc.js",
-  "dependencies": {
-    "react-dom": "^15.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "webpack-hot-middleware": "^2.17.1"
   }
 }
