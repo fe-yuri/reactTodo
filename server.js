@@ -1,4 +1,27 @@
 var path = require('path');
-var webpack = require('webpack');
-var webpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config.js');
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('./webpack.config.js');
+
+const compiler = webpack(config);
+
+const serverOptions = {
+    contentBase: path.resolve(__dirname, 'src'),
+    compress: true,
+    historyApiFallback: true,
+    states: {
+        chunks: false,
+        colors: true,
+        hash: false,
+        reasons: true,
+        timings: true,
+        version: false,
+        warnings: true
+    }
+};
+
+const server = new WebpackDevServer(compiler, serverOptions);
+
+server.listen(8080, () => {
+    console.log('now listening http://localhost:8080');
+});
