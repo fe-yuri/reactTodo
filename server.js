@@ -1,4 +1,4 @@
-var path = require('path');
+const path = require('path');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const config = require('./webpack.config.js');
@@ -9,7 +9,7 @@ const serverOptions = {
     contentBase: path.resolve(__dirname, 'src'),
     compress: true,
     historyApiFallback: true,
-    states: {
+    stats: {
         chunks: false,
         colors: true,
         hash: false,
