@@ -3,18 +3,22 @@ import Todo from './Todo';
 
 class TodoList extends React.Component {
     render(){
-        const { deleteTodo, todoItems } = this.props;
-        const arrayTodo = todoItems.map((v,i) =>
+        const {
+            deleteTodo,
+            todoItems
+        } = this.props;
+
+        const todolist = todoItems.map(({text, id}) =>
             <Todo
-                itemText={v}
-                itemIndex={i}
-                deleteTodo={deleteTodo}
+                key={`todo#${id}`}
+                itemText={text}
+                deleteTodo={()=> deleteTodo(id)}
             />
         );
         return (
             <div className="todo-app__main">
                 <ul className="todo-list">
-                    {arrayTodo}
+                    {todolist}
                 </ul>
             </div>
         );

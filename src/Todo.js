@@ -2,7 +2,10 @@ import React from 'react';
 
 class Todo extends React.Component {
     render(){
-        const { deleteTodo, itemIndex, itemText } = this.props;
+        const {
+            itemText,
+            deleteTodo
+        } = this.props;
         return (
             <li className="todo-item">
                 <div className="toggle" />
@@ -12,7 +15,7 @@ class Todo extends React.Component {
                     </div>
                     <button
                         className="todo-item__destroy"
-                        onClick={()=>deleteTodo(itemIndex)}
+                        onClick={deleteTodo}
                     />
                 </div>
                 <imput

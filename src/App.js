@@ -9,33 +9,39 @@ class App extends React.Component {
         super();
         this.state = {
             todos : [
-
+                {text : '안녕', id: 1000},
+                {text : '반가워', id: 1001}
             ]
         }
     }
-    addTodo(item){
-        const addedTodos = [...this.state.todos,item];
+    addTodo(text){
         this.setState({
-            todos : addedTodos
+            todos : [
+                ...this.state.todos,
+                {
+                    text,
+                    id : new Date()
+                }
+            ]
         })
     }
-    deleteTodo(itemIndex){
-        console.log(itemIndex);
-        const deletedTodo = this.state.todos.splice(itemIndex,1);
+    deleteTodo(itemId){
+        const newTodo = [...this.state.todos];
+        const deletedIndex = newTodo.findIndex((v)=> v.id === itemId);
+        newTodo.splice(deletedIndex,1);
         this.setState({
-            todos : [...this.state.todos]
+            todos : newTodo
         })
     }
     render(){
-        const todoItems = this.state.todos;
         return (
             <div className="todo-app">
                 <Header
-                    addTodo={v => this.addTodo(v)}
+                    addTodo={text => this.addTodo(text)}
                 />
                 <TodoList
-                    todoItems={todoItems}
-                    deleteTodo={v => this.deleteTodo(v)}
+                    todoItems={this.state.todos}
+                    deleteTodo={id => this.deleteTodo(id)}
                 />
                 <Footer />
             </div>
