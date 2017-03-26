@@ -17,17 +17,23 @@ class Todo extends React.Component {
     render(){
         const {
             itemText,
+            isDone,
             deleteTodo,
             isEditing,
             editTodo,
-            cancelEditTodo
+            cancelEditTodo,
+            toggleTodo
         } = this.props;
 
         return (
             <li className={ClassNames("todo-item", {
-                editing: isEditing
+                editing: isEditing,
+                completed: isDone
             })}>
-                <div className="toggle" />
+                <div
+                    className="toggle"
+                    onClick={toggleTodo}
+                />
                 <div className="todo-item__view">
                     <div
                         className="todo-item__view__text"

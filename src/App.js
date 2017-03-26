@@ -9,8 +9,16 @@ class App extends React.Component {
         super();
         this.state = {
             todos : [
-                {text : '안녕', id: 1000},
-                {text : '반가워', id: 1001}
+                {
+                    text : '안녕',
+                    id : 1000,
+                    isDone : false
+                },
+                {
+                    text : '반가워',
+                    id : 1001,
+                    isDone : false
+                }
             ],
             editingId : null
         }
@@ -54,19 +62,40 @@ class App extends React.Component {
             editingId : null
         })
     }
+    toggleTodo(id){
+        const newTodos = [...this.state.todos];
+        const toggleItemInedex = newTodos.findIndex(v => v.id === id);
+
+        newTodos[toggleItemInedex].isDone = !newTodos[toggleItemInedex].isDone;
+        this.setState({
+            todos : newTodos
+        })
+    }
+    toggleAll(){
+        const newTodos = [...this.state.todos];
+        const isToggleAll = newTodos.every(v => v.isDone);
+        const toggleTodos = newTodos.map(v =>
+            Object.assign({},v,{ isDone : !isToggleAll })
+        );
+        this.setState({
+            todos : toggleTodos
+        })
+    }
     render(){
         return (
             <div className="todo-app">
                 <Header
-                    addTodo={text => this.addTodo(text)}
+                    addTodo         = {text => this.addTodo(text)}
+                    toggleAll       = {() => this.toggleAll()}
                 />
                 <TodoList
-                    todoItems   = {this.state.todos}
-                    deleteTodo  = {id => this.deleteTodo(id)}
-                    editingId   = {this.state.editingId}
-                    editTodo    = {id => this.editTodo(id)}
-                    saveTodo    = {(text,id) => this.saveTodo(text,id)}
-                    cancelEditTodo = {() => this.cancelEditTodo()}
+                    todoItems       = {this.state.todos}
+                    deleteTodo      = {id => this.deleteTodo(id)}
+                    editingId       = {this.state.editingId}
+                    editTodo        = {id => this.editTodo(id)}
+                    saveTodo        = {(text,id) => this.saveTodo(text,id)}
+                    cancelEditTodo  = {() => this.cancelEditTodo()}
+                    toggleTodo      = {id => this.toggleTodo(id)}
                 />
                 <Footer />
             </div>
